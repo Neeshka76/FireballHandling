@@ -12,9 +12,9 @@ namespace FireballHandling
     public class FireballHandlingSpell : SpellCastCharge
     {
 
-        public override void Load(SpellCaster spellCaster)
+        public override void Load(SpellCaster spellCaster, Level level)
         {
-            base.Load(spellCaster);
+            base.Load(spellCaster, level);
         }
 
 
@@ -41,7 +41,7 @@ namespace FireballHandling
 
         private void SpawnItemProjectile()
         {
-            Catalog.GetData<ItemData>("DynamicProjectile").SpawnAsync(projectile =>
+            Catalog.GetData<ItemData>("DynamicProjectileFireballHandling").SpawnAsync(projectile =>
             {
                 projectile.disallowDespawn = true;
                 projectile.transform.position = spellCaster.ragdollHand.grip.position + 0.2f * spellCaster.ragdollHand.PointDir();

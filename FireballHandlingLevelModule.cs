@@ -11,14 +11,14 @@ namespace FireballHandling
     {
         private FireballHandling fireballHandling;
         // Execute at the loading of the level
-        public override IEnumerator OnLoadCoroutine(Level level)
+        public override IEnumerator OnLoadCoroutine()
         {
             // Create fireballHandling class
             fireballHandling = GameManager.local.gameObject.AddComponent<FireballHandling>();
-            return base.OnLoadCoroutine(level);
+            return base.OnLoadCoroutine();
         }
 
-        public override void Update(Level level)
+        public override void Update()
         {
             if (fireballHandling == null)
             {
